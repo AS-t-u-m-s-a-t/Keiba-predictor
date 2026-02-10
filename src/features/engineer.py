@@ -202,8 +202,12 @@ class FeatureEngineer:
                 col.startswith('horse_place_'),
                 col.startswith('horse_distance_'),
                 col.startswith('horse_course_'),
-                col.startswith('jockey_'),
-                col.startswith('frame_'),
+                col.startswith('jockey_win_'),
+                col.startswith('jockey_place_'),
+                col.startswith('jockey_show_'),
+                col.startswith('jockey_avg_'),
+                col.startswith('frame_avg_'),
+                col.startswith('frame_std_'),
                 col.startswith('is_inner_'),
                 col.startswith('is_outer_')
             ])
@@ -211,4 +215,9 @@ class FeatureEngineer:
         
         # 存在する特徴量のみを返す
         all_features = base_features + encoded_features + generated_features
-        return [f for f in all_features if f in df.columns]
+        valid_features = [f for f in all_features if f in df.columns]
+        
+        # 数値型のみを返す（オブジェクト型を除外）
+        numeric_features = [f for f in valid_features if df[f].dtype in ['int64', 'float64', 'int32', 'float32', 'bool']]
+        
+        return numeric_features

@@ -9,7 +9,7 @@ import numpy as np
 from pathlib import Path
 
 # モジュールのインポート
-from src.scraper.netkeiba import NetkeibaScaper
+from src.scraper.netkeiba import NetkeibaScraper
 from src.preprocessing.cleaner import DataCleaner
 from src.features.engineer import FeatureEngineer
 from src.models.lightgbm_model import LightGBMModel

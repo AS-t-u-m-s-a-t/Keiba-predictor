@@ -174,10 +174,10 @@ pip install -e .
 ### 1. データスクレイピング
 
 ```python
-from src.scraper.netkeiba import NetkeibaScaper
+from src.scraper.netkeiba import NetkeibaScraper
 
 # スクレイパーのインスタンス化
-scraper = NetkeibaScaper(delay=1.0, output_dir="data/raw")
+scraper = NetkeibaScraper(delay=1.0, output_dir="data/raw")
 
 # レースIDを生成（例: 2023年5月、東京競馬場）
 race_ids = scraper.generate_race_ids(

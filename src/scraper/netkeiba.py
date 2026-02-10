@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 from .parser import RaceParser
 
 
-class NetkeibaScaper:
+class NetkeibaScraper:
     """netkeiba.comからデータをスクレイピングするクラス"""
     
     BASE_URL = "https://db.netkeiba.com"
